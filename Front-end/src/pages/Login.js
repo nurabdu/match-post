@@ -12,7 +12,7 @@ let Background = styled.div`
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    background: url('https://www.vactualpapers.com/wallpapers/arsenal-football-stadium-night-view-qhd-wallpaper/download/2560x1600.jpg');
+    background: url('./images/back.jpg');
     background-size: 100%;
     box-sizing: border-box;
 `;
