@@ -36,6 +36,9 @@ app.get('/', (req, res) => {
 });
 
 require('./app/routes/user')(app);
+require('./app/routes/match')(app);
+require('./app/routes/players')(app);
+require('./app/routes/score')(app);
 
 // listen for requests
 app.listen(3000, () => {

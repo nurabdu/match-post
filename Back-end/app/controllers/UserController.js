@@ -17,6 +17,7 @@ let smtpTransport = nodemailer.createTransport({
         pass: pass
     }
 });
+
 let handlebarsOptions = {
     viewEngine: {
         extName: '.html',
@@ -94,7 +95,6 @@ exports.login = (req, res) => {
         return;
     });
 };
-
 
 exports.forgot_password = function(req, res) {
     async.waterfall([
