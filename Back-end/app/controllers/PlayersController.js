@@ -28,3 +28,32 @@ exports.registerPlayers = (req, res) => {
     });
 
 };
+exports.get_players = (req, res) => {
+    Players.find().exec(function(err, players){
+        if (players.length) {
+            players = players.map((player) => {
+                return {
+                    id: player.id,
+                    goalkeeper:     player.goalkeeper || '',
+                    defender1:      player.defender1  || '',
+                    defender2:      player.defender2 || '',
+                    defender3:      player.defender3 || '',
+                    defender4:      player.defender4 || '',
+                    midfielder1:    player.midfielder1 || '',
+                    midfielder2:    player.midfielder2 || '',
+                    midfielder3:    player.midfielder3 || '',
+                    midfielder4:    player.midfielder4 || '',
+                    attack1:        player.attack1 || '',
+                    attack2:        player.attack2 || ''
+                }
+            });
+            res.send({
+              players 
+            })
+        } else {
+            res.status(400).send({
+                message: "Players not found"
+            });
+        }
+    });
+};

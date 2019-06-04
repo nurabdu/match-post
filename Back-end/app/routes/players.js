@@ -6,4 +6,9 @@ module.exports = (app) => {
      * Players registration
      */
     app.post('/players/register', playersController.registerPlayers);
+
+     /**
+      *Get Match
+      */
+    app.get('/players/get:id?', playersController.get_players);
 };

@@ -25,6 +25,7 @@ exports.score = (req, res) => {
         if (score) {
             res.send({
                 score: {
+                    id: score.id,
                     firstScore: score.firstScore || '',
                     secondScore: score.firstScore || ''
                 }

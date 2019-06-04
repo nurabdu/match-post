@@ -7,8 +7,8 @@ module.exports = (app) => {
      */
     app.post('/match/register', matchController.registerMatches);
 
- /**
+     /**
      *Get Match
      */
-    app.get('/match/match', auth.checkToken, matchController.match);
+    app.get('/match/match:id', auth.checkToken, matchController.match);
 };
