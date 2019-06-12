@@ -26,6 +26,12 @@ let Cont = styled.div`
     width: 60%;
     height: 79.5%;
 `;
+let Butt = styled.div`
+    width: 100%;
+    height: 70px;
+    background: yellow;
+    text-align: center;
+`;
 class Content extends Component {
     state = {
         show: false,
@@ -36,20 +42,20 @@ class Content extends Component {
             <Head>
             <InnerDiv 
                bg="#e54c85"
-                 htitle="Matches"
+                 text="Matches"
                  popupContent={<MatchCont/>}
                 />
                  <InnerDiv 
                bg="#e54c85"
-                 htitle="Players"
+               text="Players"
                  popupContent={<Players/>}/>
                  <InnerDiv 
                bg="#e54c85"
-                 htitle="Football Clubs"
+               text="Clubs"
                  popupContent={<Clubs/>}/>
                  <InnerDiv 
                bg="#e54c85"
-                 htitle="Score"
+               text="Score"
                  popupContent={<Score/>}/>
             </Head>
             <Cont>
@@ -66,7 +72,7 @@ class InnerDiv extends Component {
         };
         render() {
             let { show } = this.state;
-            let { htitle, bg, popupContent} = this.props;
+            let { htitle, bg, popupContent,text} = this.props;
             return (
                 <>
                   <div className='inner' style={{background: bg, height: "70px", border: "1px solid green", display: "flex"}}>
@@ -80,13 +86,12 @@ class InnerDiv extends Component {
                              {popupContent}
                           </Popup>
                        </div>
-                       <button
-                       text='подробнее'
+                      <Butt 
                        onClick={
-                       () => 
-                           this.setState({ show: true })
-                         }
-                            />
+                              () => 
+                                  this.setState({ show: true })
+                                }
+                                ><h3>{text}</h3></Butt>
                      </div> 
                  </>
             );

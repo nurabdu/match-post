@@ -98,7 +98,7 @@ class Login extends Component {
 
    componentWillMount(){
        if(ls.get('accessToken')){
-           window.location.href = '/admin';
+           window.location.href = '/matches';
        }
    }
     
