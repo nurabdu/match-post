@@ -22,22 +22,28 @@ match.save().then(data => {
  });
 };
 
-exports.match = (req, res) => {
-    Match.findById(req.params.id).exec(function(err, match) {
-        if (match) {
-            res.send({
-                match: {
+exports.get_match = (req, res) => {
+    Match.find().exec(function(err, match){
+        if (match.length) {
+            match = match.map((mach) => {
+                return {
                     id: match.id,
-                    clubs:          match.clubs || '',
-                    score:          match.score || '',           
-                    clubs2:         match.clubs2 || '',
-                    score2:         match.score2 || ''
+                    clubs:          mach.clubs || '',
+                    score:          mach.score || '',           
+                    clubs2:         mach.clubs2 || '',
+                    score2:         mach.score2 || ''
                 }
+            });
+            res.send({
+                match 
             })
         } else {
             res.status(400).send({
-                message: 'Match not found'
+                message: "match not found"
             });
         }
     });
-};
+}; 
+
+
+

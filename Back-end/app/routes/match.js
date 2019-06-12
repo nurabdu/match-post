@@ -10,5 +10,5 @@ module.exports = (app) => {
      /**
      *Get Match
      */
-    app.get('/match/match:id', auth.checkToken, matchController.match);
+    app.get('/match/get:id?', matchController.get_match);
 };

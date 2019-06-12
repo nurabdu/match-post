@@ -9,5 +9,5 @@ module.exports = (app) => {
     /**
      * Get Score 
      */
-    app.get('/score/score', auth.checkToken, scoreController.score);
+    app.get('/score/get:id?', scoreController.get_score);
 };

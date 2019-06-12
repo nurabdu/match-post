@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import styled from 'styled-components';
-import Header from "../components/Header";
 import Content from "../components/Content";
 import ReactNotification from "react-notifications-component";
 import "react-notifications-component/dist/theme.css";
@@ -20,7 +19,6 @@ class Matches extends Component {
     render() {
         return (
             <MatchBackground>
-                <Header/>
                 <Content/>
             </MatchBackground>
             );
