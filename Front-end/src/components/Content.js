@@ -27,10 +27,10 @@ let Cont = styled.div`
     height: 79.5%;
 `;
 let Butt = styled.div`
-    width: 100%;
-    height: 70px;
-    background: yellow;
-    text-align: center;
+width: 100%;
+height: 70px;
+background: yellow;
+text-align: center;
 `;
 class Content extends Component {
     state = {
@@ -59,7 +59,7 @@ class Content extends Component {
                  popupContent={<Score/>}/>
             </Head>
             <Cont>
-               
+               <h1>Welcome to Match post application</h1>
             </Cont>
             </>
             );
